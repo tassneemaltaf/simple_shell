@@ -48,6 +48,7 @@ int exe_cmd(char **tkns, char *fname, char **env, char *cmd, int err)
 			if (execve(tkns[0], tkns, env) == -1)
 			{
 				print_error(cmd, "not found", fname, err);
+				return (127);
 			}
 
 		} else
@@ -56,6 +57,7 @@ int exe_cmd(char **tkns, char *fname, char **env, char *cmd, int err)
 	} else
 	{
 		print_error(cmd, "not found", fname, err);
+		return (127);
 	}
 
 	return (WEXITSTATUS(status));

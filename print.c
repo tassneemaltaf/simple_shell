@@ -70,7 +70,7 @@ void print_error(char *command, char *message, char *filename, int err_no)
 	}
 
 	_strcpy(err_msg, filename);
-	_strcat(err_msg, " ", 1);
+	_strcat(err_msg, ": ", 2);
 	_strcat(err_msg, err_no_str, _strlen(err_no_str));
 	_strcat(err_msg, ": ", 2);
 	_strcat(err_msg, command, _strlen(command));
